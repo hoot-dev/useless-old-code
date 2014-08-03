@@ -6,6 +6,9 @@ class User
   field :uid, type: String
   field :name, type: String
 
+  has_one :bracket
+  has_and_belongs_to_many :leagues
+
   def self.create_with_omniauth(auth)
     create! do |user|
       user.provider = auth['provider']
