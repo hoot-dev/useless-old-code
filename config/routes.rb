@@ -11,4 +11,11 @@ Rails.application.routes.draw do
   resources :teams do
     resources :stats
   end
+
+  resources :leagues
+
+  resources :leaderboards
+
+  resources :brackets
+
 end

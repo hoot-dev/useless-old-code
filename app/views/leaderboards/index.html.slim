@@ -1,0 +1,19 @@
+h1 Listing leaderboards
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @leaderboards.each do |leaderboard|
+      tr
+        td = link_to 'Show', leaderboard
+        td = link_to 'Edit', edit_leaderboard_path(leaderboard)
+        td = link_to 'Destroy', leaderboard, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Leaderboard', new_leaderboard_path

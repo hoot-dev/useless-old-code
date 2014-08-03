@@ -1,0 +1,9 @@
+= form_for @bracket do |f|
+  - if @bracket.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@bracket.errors.count, "error")} prohibited this bracket from being saved:"
+      ul
+        - @bracket.errors.full_messages.each do |message|
+          li = message
+
+  .actions = f.submit 'Save'

@@ -1,0 +1,19 @@
+h1 Listing brackets
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @brackets.each do |bracket|
+      tr
+        td = link_to 'Show', bracket
+        td = link_to 'Edit', edit_bracket_path(bracket)
+        td = link_to 'Destroy', bracket, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Bracket', new_bracket_path
