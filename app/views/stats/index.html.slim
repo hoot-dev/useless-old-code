@@ -1,0 +1,19 @@
+h1 Listing stats
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @stats.each do |stat|
+      tr
+        td = link_to 'Show', stat
+        td = link_to 'Edit', edit_stat_path(stat)
+        td = link_to 'Destroy', stat, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Stat', new_stat_path

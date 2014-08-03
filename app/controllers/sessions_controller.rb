@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
     user = User.find_by(provider: auth['provider'],
                       uid: auth['uid']) || User.create_with_omniauth(auth)
     session[:user_id] = user.id.to_s
-    binding.pry
     redirect_to user_path(user), notice: "Signed in!"
   end
 
